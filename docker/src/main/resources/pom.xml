@@ -88,13 +88,13 @@
                         </goals>
                         <configuration>
                             <executable>docker</executable>
-                            <commandLineArgs>
+                            <commandlineArgs>
                                 build
                                 --no-cache
                                 --force-rm
                                 -t \${docker.imageName}
                                 \${project.build.directory}
-                            </commandLineArgs>
+                            </commandlineArgs>
                         </configuration>
                     </execution>
                 </executions>
