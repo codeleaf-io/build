@@ -35,7 +35,7 @@
         <plugins>
             <plugin>
                 <groupId>io.codeleaf.build</groupId>
-                <artifactId>build-lifecycles</artifactId>
+                <artifactId>build-docker-lifecycle</artifactId>
                 <version>${project.version}</version>
                 <extensions>true</extensions>
             </plugin>
@@ -118,36 +118,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>run</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>exec-docker-compose</id>
-                                <phase>test</phase>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <configuration>
-                                    <executable>docker-compose</executable>
-                                    <commandlineArgs>
-                                        up
-                                        --remove-orphans
-                                    </commandlineArgs>
-                                    <workingDirectory>\${project.build.directory}</workingDirectory>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 
 </project>

@@ -6,9 +6,10 @@
         <groupId>io.codeleaf.build</groupId>
         <artifactId>build</artifactId>
         <version>0.1.0</version>
+        <relativePath>../..</relativePath>
     </parent>
 
-    <artifactId>build-lifecycles</artifactId>
+    <artifactId>build-docker-lifecycle</artifactId>
     <packaging>jar</packaging>
 
     <build>

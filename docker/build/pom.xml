@@ -6,7 +6,7 @@
         <groupId>io.codeleaf.build</groupId>
         <artifactId>build-generate</artifactId>
         <version>0.1.0</version>
-        <relativePath>../generate</relativePath>
+        <relativePath>../../generate</relativePath>
     </parent>
 
     <artifactId>build-docker</artifactId>
