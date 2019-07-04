@@ -15,7 +15,7 @@
                                 org.codehaus.mojo:properties-maven-plugin:${maven-properties-plugin.version}:read-project-properties
                             </initialize>
                             <process-resources>
-                                org.apache.maven.plugins:maven-resources-plugin:${maven-resources-plugin.version}:resources
+                                org.apache.maven.plugins:maven-resources-plugin:${maven-resources-plugin.version}:resources,
                                 org.apache.maven.plugins:maven-dependency-plugin:${maven-dependency-plugin.version}:copy-dependencies
                             </process-resources>
                             <package>
