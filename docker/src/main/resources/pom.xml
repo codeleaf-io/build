@@ -8,10 +8,30 @@
     <packaging>pom</packaging>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <docker.imageName>\${project.artifactId}</docker.imageName>
     </properties>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${maven-dependency-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>${maven-exec-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>io.codeleaf.build</groupId>
@@ -22,7 +42,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>${maven-resources-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>default-resources</id>
@@ -63,7 +82,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>${maven-dependency-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>default-copy-dependencies</id>
@@ -79,7 +97,6 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>${maven-exec-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>default-exec</id>
@@ -110,7 +127,6 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>${maven-exec-plugin.version}</version>
                         <executions>
                             <execution>
                                 <id>exec-docker-compose</id>
@@ -120,10 +136,10 @@
                                 </goals>
                                 <configuration>
                                     <executable>docker-compose</executable>
-                                    <commandLineArgs>
+                                    <commandlineArgs>
                                         up
                                         --remove-orphans
-                                    </commandLineArgs>
+                                    </commandlineArgs>
                                     <workingDirectory>\${project.build.directory}</workingDirectory>
                                 </configuration>
                             </execution>
