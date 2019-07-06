@@ -1,0 +1,10 @@
+<project>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.codeleaf.build</groupId>
+    <artifactId>build-docker-lifecycle</artifactId>
+    <version>${project.version}</version>
+    <packaging>jar</packaging>
+
+</project>

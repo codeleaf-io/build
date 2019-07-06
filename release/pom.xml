@@ -6,10 +6,11 @@
         <groupId>io.codeleaf.build</groupId>
         <artifactId>build-generate</artifactId>
         <version>0.1.0</version>
-        <relativePath>../../generate</relativePath>
+        <relativePath>../generate</relativePath>
     </parent>
 
-    <artifactId>build-docker-lifecycle</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>build-release</artifactId>
+    <version>0.1.0</version>
+    <packaging>pom</packaging>
 
 </project>

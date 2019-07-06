@@ -3,75 +3,24 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.codeleaf.build</groupId>
-    <artifactId>build</artifactId>
-    <version>0.1.0</version>
-
-    <name>Maven Build Tool</name>
+    <artifactId>build-release</artifactId>
+    <version>${project.version}</version>
     <packaging>pom</packaging>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <git.repo>build</git.repo>
-        <git.version>${project.version}</git.version>
-
-        <maven.version>3.6.1</maven.version>
-
-        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-        <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
-        <maven-exec-plugin.version>1.6.0</maven-exec-plugin.version>
-        <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
-        <maven-groovy-plugin.version>2.1</maven-groovy-plugin.version>
-        <maven-javadoc-plugin.version>3.1.0</maven-javadoc-plugin.version>
-        <maven-properties-plugin.version>1.0.0</maven-properties-plugin.version>
-        <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
-        <maven-rpm-plugin.version>2.2.0</maven-rpm-plugin.version>
-        <maven-source-plugin.version>3.1.0</maven-source-plugin.version>
-        <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
-    </properties>
-
-    <modules>
-        <module>generate</module>
-        <module>release</module>
-        <module>docker/lifecycle</module>
-        <module>docker/build</module>
-        <module>docker/run</module>
-        <module>rpm</module>
-    </modules>
-
-    <licenses>
-        <license>
-            <name>GNU General Public License, Version 3</name>
-            <url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <developers>
-        <developer>
-            <name>Tom Burger</name>
-            <email>tvburger@gmail.com</email>
-            <organization>TVBurger B.V.</organization>
-            <organizationUrl>http://www.tvburger.net/</organizationUrl>
-        </developer>
-    </developers>
-
-    <scm>
-        <connection>scm:git:git://github.com/codeleaf-io/${git.repo}.git</connection>
-        <developerConnection>scm:git:ssh://github.com/codeleaf-io/${git.repo}.git</developerConnection>
-        <url>https://github.com/codeleaf-io/${git.repo}/tree/release/${git.version}</url>
-    </scm>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <compilerArgument>-Xlint:all</compilerArgument>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
     <profiles>
         <profile>
