@@ -5,8 +5,8 @@
     <parent>
         <groupId>io.codeleaf.build</groupId>
         <artifactId>build-generate</artifactId>
-        <version>0.1.0</version>
-        <relativePath>../../generate</relativePath>
+        <version>0.9.0</version>
+        <relativePath>../../generate/pom.xml</relativePath>
     </parent>
 
     <artifactId>build-docker-lifecycle</artifactId>
